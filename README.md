@@ -17,10 +17,10 @@ I create a website with programming languages:
 #Screenshot
 
 ![Screenshot of HTML 5]
-(https://raw.githubusercontent.com/technext/Developer/master/Features/html5.png)
+(https://github.com/davidjoshua87/davidjoshua87.github.io/blob/master/Screen%20Shot%20Full%20Website.png)
 
 ![Screenshot of HTML 5]
-(https://raw.githubusercontent.com/technext/Developer/master/Features/html5.png)
+(https://github.com/davidjoshua87/davidjoshua87.github.io/blob/master/Screen%20Shot%20Mobile%20Version.png)
 
 #Demo Link
 Check out the demo  (https://davidjoshua87.github.io/)
