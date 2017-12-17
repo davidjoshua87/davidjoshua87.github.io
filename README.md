@@ -5,7 +5,7 @@ Now, I live in Jakarta, Indonesia. I am a fan of technology, games, programming,
 
 I create a website with programming languages:
 
-- Built with w3 validated HTML5 & CSS3
+- Built with HTML5 & CSS3
 - Modern Design
 - It is slightly responsive
 - integrated with send email and whatsapp
@@ -14,14 +14,16 @@ I create a website with programming languages:
 - Easy to use
 
 
-#Screenshot
+##Screenshot
 
-![Screenshot of HTML 5]
+###Screenshot 1
+
 (https://github.com/davidjoshua87/davidjoshua87.github.io/blob/master/Screen%20Shot%20Full%20Website.png)
 
-![Screenshot of HTML 5]
+###Screenshot 2
+
 (https://github.com/davidjoshua87/davidjoshua87.github.io/blob/master/Screen%20Shot%20Mobile%20Version.png)
 
-#Demo Link
+##Demo Link
 Check out the demo  (https://davidjoshua87.github.io/)
 
