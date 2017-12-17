@@ -16,11 +16,11 @@ This is one example of my website. This website is made with features:
 
 ## Screenshot
 
-### Screenshot 1
+### Screenshot 1 - Fullsite Version
 
 ![Screenshot 1](https://github.com/davidjoshua87/davidjoshua87.github.io/blob/master/Screen%20Shot%20Full%20Website.png)
 
-### Screenshot 2
+### Screenshot 2 - Mobile Version
 
 ![Screenshot 2](https://github.com/davidjoshua87/davidjoshua87.github.io/blob/master/Screen%20Shot%20Mobile%20Version.png)
 
