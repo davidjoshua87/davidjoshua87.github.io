@@ -14,17 +14,17 @@ I create a website with programming languages:
 - Easy to use
 
 
-##Screenshot
+## Screenshot
 
-###Screenshot 1
+### Screenshot 1
 
 ![Screenshot 1](https://github.com/davidjoshua87/davidjoshua87.github.io/blob/master/Screen%20Shot%20Full%20Website.png)
 
-###Screenshot 2
+### Screenshot 2
 
 ![Screenshot 2](https://github.com/davidjoshua87/davidjoshua87.github.io/blob/master/Screen%20Shot%20Mobile%20Version.png)
 
-##Demo Link
+## Demo Link
 [Check out the demo](https://davidjoshua87.github.io/)
 
 
