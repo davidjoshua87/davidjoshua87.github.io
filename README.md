@@ -18,12 +18,13 @@ I create a website with programming languages:
 
 ###Screenshot 1
 
-(https://github.com/davidjoshua87/davidjoshua87.github.io/blob/master/Screen%20Shot%20Full%20Website.png)
+![Screenshot 1](https://github.com/davidjoshua87/davidjoshua87.github.io/blob/master/Screen%20Shot%20Full%20Website.png)
 
 ###Screenshot 2
 
-(https://github.com/davidjoshua87/davidjoshua87.github.io/blob/master/Screen%20Shot%20Mobile%20Version.png)
+![Screenshot 2](https://github.com/davidjoshua87/davidjoshua87.github.io/blob/master/Screen%20Shot%20Mobile%20Version.png)
 
 ##Demo Link
-Check out the demo  (https://davidjoshua87.github.io/)
+[Check out the demo](https://davidjoshua87.github.io/)
+
 
