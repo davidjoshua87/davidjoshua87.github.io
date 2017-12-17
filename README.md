@@ -3,7 +3,7 @@ I'm David Joshua. You can call me David. I am a Full Professional Web Developer.
 
 Now, I live in Jakarta, Indonesia. I am a fan of technology, games, programming, web development, reading, writing, culinary hunting and travelling.
 
-I create a website with programming languages:
+This is one example of my website. This website is made with features:
 
 - Built with HTML5 & CSS3
 - Modern Design
