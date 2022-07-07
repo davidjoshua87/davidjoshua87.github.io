@@ -481,6 +481,7 @@ input[type=submit] {
 @media (max-width: 767px) {
   .header {
     text-align: center;
+    padding-bottom: 50px;
   }
   .header .profile-image {
     float: none !important;
