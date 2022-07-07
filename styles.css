@@ -103,7 +103,7 @@ a.dotted-link:hover {
 
 .header {
   padding: 0;
-  background: #f4f4f4;
+  background-color: #f4f4f4;
   border-top: 15px solid black;
   border-radius: 5px;
 }
