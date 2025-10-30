@@ -39,6 +39,8 @@ body {
     color: var(--text-dark);
     background: var(--bg-light);
     overflow-x: hidden;
+    width: 100%;
+    min-width: 320px; /* Minimum width for mobile devices */
 }
 
 /* Container */
@@ -46,6 +48,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 /* Navigation */
@@ -148,7 +153,9 @@ body {
     align-items: center;
     position: relative;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    overflow: hidden;
+    overflow-x: hidden; /* Only hide horizontal overflow on desktop */
+    padding-top: 80px; /* Account for fixed navbar */
+    margin-top: -80px; /* Offset the padding to maintain full viewport height */
 }
 
 .hero-background {
@@ -1027,9 +1034,9 @@ body {
     font-size: 1.2rem;
     opacity: 0;
     visibility: hidden;
-    transition: var(--transition);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     box-shadow: var(--shadow-lg);
-    z-index: 999;
+    z-index: 1001; /* Increased z-index */
 }
 
 .back-to-top.show {
@@ -1046,6 +1053,17 @@ body {
 
 /* Tablets */
 @media (max-width: 768px) {
+    /* Prevent horizontal overflow */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .container {
+        overflow: hidden;
+        max-width: 100%;
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -1053,10 +1071,12 @@ body {
         flex-direction: column;
         background: white;
         width: 100%;
+        max-width: 100vw;
         text-align: center;
         transition: 0.3s;
         box-shadow: var(--shadow-lg);
         padding: 2rem 0;
+        box-sizing: border-box;
     }
 
     .nav-menu.active {
@@ -1085,13 +1105,23 @@ body {
         gap: 2rem;
     }
 
+    .hero {
+        overflow: hidden; /* Full overflow hidden for tablet */
+        padding-top: 80px;
+        margin-top: -80px;
+        min-height: calc(100vh + 80px);
+    }
+
     .hero-title {
         font-size: 2.5rem;
+        word-wrap: break-word;
+        hyphens: auto;
     }
 
     .profile-img {
         width: 300px;
         height: 300px;
+        max-width: 70vw;
     }
 
     .hero-buttons {
@@ -1099,10 +1129,32 @@ body {
         flex-wrap: wrap;
     }
 
-    .hero-social {
-        justify-content: center;
+    .btn {
+        min-width: 160px;
     }
 
+    .hero-social {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Section fixes */
+    .section {
+        overflow-x: hidden;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+    .section-subtitle {
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+    /* Timeline fixes */
     .timeline::before {
         left: 30px;
     }
@@ -1110,6 +1162,7 @@ body {
     .timeline-item {
         flex-direction: row !important;
         margin-left: 60px;
+        margin-right: 20px;
     }
 
     .timeline-dot {
@@ -1117,7 +1170,29 @@ body {
     }
 
     .timeline-content {
-        width: 100%;
+        width: calc(100% - 80px);
+        box-sizing: border-box;
+    }
+
+    /* Grid fixes */
+    .about-cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .education-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
     }
 
     .contact-content {
@@ -1128,6 +1203,7 @@ body {
     .about-info {
         flex-direction: column;
         gap: 1rem;
+        align-items: center;
     }
 
     .footer-content {
@@ -1135,66 +1211,132 @@ body {
         text-align: center;
     }
 
-    .section-title {
-        font-size: 2rem;
+    /* Navigation fixes */
+    .navbar {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    /* Card margins */
+    .about-card,
+    .project-card,
+    .skill-category,
+    .education-card {
+        margin: 0 5px;
+        box-sizing: border-box;
+    }
+
+    /* Back to top button tablet fixes */
+    .back-to-top {
+        bottom: 25px;
+        right: 20px;
+        width: 48px;
+        height: 48px;
+        font-size: 1.1rem;
+        z-index: 1001;
+    }
+
+    .back-to-top.show {
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 }
 
 /* Mobile */
 @media (max-width: 480px) {
+    /* Prevent horizontal overflow at root level */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
     .container {
         padding: 0 15px;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    /* Hero section fixes */
+    .hero {
+        overflow: hidden; /* Full overflow hidden for mobile */
+        padding-top: 90px; /* Increased padding to avoid navbar overlap on mobile */
+        margin-top: 0px;
+        min-height: calc(100vh + 90px);
     }
 
     .hero-title {
         font-size: 2rem;
+        word-wrap: break-word;
+        hyphens: auto;
     }
 
     .hero-subtitle {
         font-size: 1.2rem;
+        word-wrap: break-word;
     }
 
     .section {
-        padding: 60px 0;
+        padding: 60px 15px;
+        overflow-x: hidden;
     }
 
     .section-title {
         font-size: 1.8rem;
+        word-wrap: break-word;
+        hyphens: auto;
     }
 
+    .section-subtitle {
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+    /* Grid fixes */
     .about-cards {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .skills-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .education-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
+    /* Profile image fixes */
     .profile-img {
         width: 250px;
         height: 250px;
+        max-width: 90vw;
     }
 
+    /* Button fixes */
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
 
     .btn {
         width: 200px;
         justify-content: center;
+        max-width: 90vw;
     }
 
+    /* Timeline fixes */
     .timeline-item {
         margin-left: 40px;
+        margin-right: 15px;
     }
 
     .timeline::before {
@@ -1203,6 +1345,100 @@ body {
 
     .timeline-dot {
         left: 20px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px;
+        box-sizing: border-box;
+    }
+
+    /* Cards and content fixes */
+    .about-card,
+    .project-card,
+    .skill-category,
+    .education-card,
+    .contact-form {
+        margin: 0 5px;
+        box-sizing: border-box;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .about-info {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-social {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Navigation fixes */
+    .nav-menu {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .navbar {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    /* Text overflow fixes */
+    * {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+    }
+
+    .project-title,
+    .about-card h3,
+    .skill-category h3 {
+        word-wrap: break-word;
+        hyphens: auto;
+        line-height: 1.3;
+    }
+
+    /* Footer fixes */
+    .footer {
+        padding: 2rem 15px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    /* Back to top button mobile fixes */
+    .back-to-top {
+        bottom: 20px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+        z-index: 1001; /* Ensure it's above everything */
+    }
+
+    .back-to-top.show {
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 }
 
