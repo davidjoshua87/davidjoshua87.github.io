@@ -1,6 +1,6 @@
 # 🚀 David Joshua - Modern Portfolio
 
-![Portfolio Banner](https://github.com/davidjoshua87/davidjoshua87.github.io/blob/master/Screen%20Shot%20Full%20Website.png)
+![Portfolio Banner](https://davidjoshua87.github.io/Screen%20Shot%20Full%20Website.png)
 
 > A modern, fully responsive portfolio website showcasing professional journey and diverse expertise
 
@@ -66,15 +66,15 @@ Based in **Jakarta, Indonesia**, I bring a multidisciplinary approach to every p
 
 ### Desktop Version
 
-![Desktop View](https://github.com/davidjoshua87/davidjoshua87.github.io/blob/master/Screen%20Shot%20Full%20Website.png)
+![Desktop View](https://davidjoshua87.github.io/Screen%20Shot%20Full%20Website.png)
 
 ### Mobile Version
 
-![Mobile View](https://github.com/davidjoshua87/davidjoshua87.github.io/blob/master/Screen%20Shot%20Mobile%20Version.png)
+![Mobile View](https://davidjoshua87.github.io/Screen%20Shot%20Mobile%20Version.png)
 
 ## 🏗️ Project Structure
 
-```
+```shell
 davidjoshua87.github.io/
 ├── index.html          # Main HTML file with semantic structure
 ├── styles.css          # Complete modern styling
