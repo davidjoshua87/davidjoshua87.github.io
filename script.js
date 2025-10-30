@@ -61,21 +61,45 @@ function typeWriter() {
 // Start typing animation when page loads
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeWriter, 1000);
+
+    // Initialize back to top button
+    if (backToTopBtn) {
+        // Ensure initial state is hidden
+        backToTopBtn.style.opacity = '0';
+        backToTopBtn.style.visibility = 'hidden';
+        backToTopBtn.style.display = 'flex';
+        backToTopBtn.style.pointerEvents = 'none';
+    }
 });
 
-// Navbar scroll effect
+// Navbar scroll effect and back to top button
 window.addEventListener('scroll', () => {
+    // Navbar styling
     if (window.scrollY > 100) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
 
-    // Show/hide back to top button
-    if (window.scrollY > 500) {
-        backToTopBtn.classList.add('show');
+    // Show/hide back to top button with mobile-friendly threshold
+    const scrollThreshold = window.innerWidth <= 768 ? 600 : 500;
+
+    if (window.scrollY > scrollThreshold) {
+        if (backToTopBtn) {
+            backToTopBtn.classList.add('show');
+            // Force visibility with inline styles to override any CSS issues
+            backToTopBtn.style.opacity = '1';
+            backToTopBtn.style.visibility = 'visible';
+            backToTopBtn.style.display = 'flex';
+            backToTopBtn.style.pointerEvents = 'auto';
+        }
     } else {
-        backToTopBtn.classList.remove('show');
+        if (backToTopBtn) {
+            backToTopBtn.classList.remove('show');
+            backToTopBtn.style.opacity = '0';
+            backToTopBtn.style.visibility = 'hidden';
+            backToTopBtn.style.pointerEvents = 'none';
+        }
     }
 });
 
@@ -101,7 +125,9 @@ navLinks.forEach(link => {
         const targetSection = document.querySelector(targetId);
 
         if (targetSection) {
-            const offsetTop = targetSection.offsetTop - 80;
+            // Dynamic offset based on screen size
+            const navbarHeight = window.innerWidth <= 480 ? 90 : 80;
+            const offsetTop = targetSection.offsetTop - navbarHeight;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -117,6 +143,7 @@ backToTopBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
 
 // Active navigation link highlighting
 window.addEventListener('scroll', () => {
