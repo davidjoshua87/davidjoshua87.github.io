@@ -1055,7 +1055,8 @@ body {
 @media (max-width: 768px) {
     /* Prevent horizontal overflow */
     html, body {
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: auto;
         width: 100%;
     }
 
@@ -1433,12 +1434,23 @@ body {
         width: 45px;
         height: 45px;
         font-size: 1rem;
-        z-index: 1001; /* Ensure it's above everything */
+        z-index: 9999 !important; /* Ensure it's above everything */
+        pointer-events: auto !important;
+        display: flex !important;
+        transform: none !important;
     }
 
     .back-to-top.show {
         opacity: 1 !important;
         visibility: visible !important;
+        display: flex !important;
+        pointer-events: auto !important;
+    }
+
+    .back-to-top:not(.show) {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
     }
 }
 

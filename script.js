@@ -92,6 +92,10 @@ window.addEventListener('scroll', () => {
             backToTopBtn.style.visibility = 'visible';
             backToTopBtn.style.display = 'flex';
             backToTopBtn.style.pointerEvents = 'auto';
+            backToTopBtn.style.zIndex = '9999';
+
+            // Debug log
+            console.log('Back to top button shown at scroll:', window.scrollY);
         }
     } else {
         if (backToTopBtn) {
